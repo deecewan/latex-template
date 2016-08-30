@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc} % Makes input utf8 (I think?)
 \usepackage{amsmath} % All maths related things
 \usepackage{amssymb} % Maths symbols
+\usepackage{cancel} % Show cancellations in maths
 \usepackage{graphicx} % Use images in your report
 \usepackage{fancyhdr} % Make very nice looking header and footers for your report
 \usepackage{titlesec} % Change the way the default titles/heading look
@@ -15,11 +16,12 @@
 \usepackage[american]{babel} % Does something to do with formatting based on culture
 \usepackage{pdflscape} % Make landscape pages display in a PDF in landscape, instead of sideways portait
 \usepackage{geometry} % ability to change the sizes of a page.  usefull for `fullbleed' pages
-\usepackage{mathrsfs} % Used for Maths-based script letters (like the R for the real number set)
+\usepackage{mathrsfs} % Used for Maths-based script letters (like the R for the real number set, or F for Fourier Transform)
 \usepackage{listings} % format your code for pretty display
 \usepackage[url=true,backend=biber,style=ieee]{biblatex} % better bibliographies
 \usepackage{nameref} % Reference names and make them links (I think?)
 \usepackage[backref=true]{hyperref} % Should be last package include.  Adds links that work
+\usepackage[numbered,framed]{matlab-prettifier} % Pretty-print MATLAB code
 
 % `caption' setup
 \captionsetup{justification=centering}
@@ -39,6 +41,7 @@
 }
 % Define a second listing style
 \lstset{language=SQL, basicstyle=\ttfamily, keywordstyle=\color{blue}\ttfamily, stringstyle=\color{magenta}\ttfamily}
+
 
 % Add in your bibliography (all references should go in here)
 \addbibresource{bib.bib}
@@ -99,6 +102,12 @@
 		Your work all goes into sections that look like this
 	\section{Section of Long}
 		This is a longer section, broken up into subsections
+		You can add code like:
+		\begin{lstlisting}[style=Matlab-editor]
+			t = repmat(t, 1, 5);
+		\end{lstlisting}
+		
+		Or, you can add \lstinline|inline code| like this.
 		\subsection{Break up of work}
 			This is a subsection with all your work
 \end{document}
